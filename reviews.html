@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews - TerraCrest Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary: #00ffff; /* Aqua */
+      --primary-foreground: #000000;
+      --accent: #00cccc;
+      --background: #000000; /* Black background */
+      --card: #111111; /* Dark card */
+      --border: #00ffff; /* Aqua borders */
+      --foreground: #00ffff;
+      --muted-foreground: #00cccc;
+    }
+
+    body { background-color: var(--background); color: var(--foreground); }
+
+    .bg-primary { background-color: var(--primary); }
+    .text-primary { color: var(--primary); }
+    .text-primary-foreground { color: var(--primary-foreground); }
+    .bg-card { background-color: var(--card); }
+    .border-border { border-color: var(--border); }
+    .text-muted-foreground { color: var(--muted-foreground); }
+    .text-accent { color: var(--accent); }
+    .hover\:shadow-glow:hover { box-shadow: 0 0 15px var(--primary); }
+    .animate-glow-pulse { animation: glow-pulse 2s infinite; }
+    @keyframes glow-pulse {
+      0%,100% { text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary); }
+      50% { text-shadow: 0 0 20px var(--primary), 0 0 30px var(--primary); }
+    }
+    .animate-fade-in { animation: fade-in 1s ease forwards; }
+    @keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .transition-all { transition: all 0.3s ease; }
+  </style>
+</head>
+<body class="font-sans">
+
+  <!-- Hero Section -->
+  <section class="relative h-96 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('Reviews .jpeg');"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
+    <div class="relative z-10 text-center animate-fade-in px-4">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 text-primary animate-glow-pulse">
+        What Our Clients Say
+      </h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto text-accent text-white">
+        TerraCrest Group drives transformation and growth — here’s what our partners and clients have to say.
+      </p>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 text-primary">Client Reviews</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Review Card 1 -->
+        <div class="p-6 bg-card rounded-lg border border-border hover:shadow-glow transition-all animate-fade-in">
+          <p class="text-accent mb-4">
+            "TerraCrest Group completely transformed our business strategy. Their expertise in B.E.E. initiatives is unmatched!"
+          </p>
+          <h3 class="text-lg font-semibold text-primary">– Sipho M.</h3>
+          <p class="text-muted-foreground">CEO, FutureTech Solutions</p>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="p-6 bg-card rounded-lg border border-border hover:shadow-glow transition-all animate-fade-in" style="animation-delay:0.2s">
+          <p class="text-accent mb-4">
+            "Professional, innovative, and results-driven. Working with TerraCrest Group was a game-changer for our community initiatives."
+          </p>
+          <h3 class="text-lg font-semibold text-primary">– Thandi N.</h3>
+          <p class="text-muted-foreground">Director, Empowerment Co.</p>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="p-6 bg-card rounded-lg border border-border hover:shadow-glow transition-all animate-fade-in" style="animation-delay:0.4s">
+          <p class="text-accent mb-4">
+            "Their team provided insightful guidance and measurable results. Highly recommend TerraCrest for any business seeking growth."
+          </p>
+          <h3 class="text-lg font-semibold text-primary">– Johan V.</h3>
+          <p class="text-muted-foreground">Founder, Growth Partners</p>
+        </div>
+
+        <!-- Review Card 4 -->
+        <div class="p-6 bg-card rounded-lg border border-border hover:shadow-glow transition-all animate-fade-in" style="animation-delay:0.6s">
+          <p class="text-accent mb-4">
+            "We saw tangible improvements in performance and strategy. TerraCrest’s team is highly skilled and professional."
+          </p>
+          <h3 class="text-lg font-semibold text-primary">– Lerato K.</h3>
+          <p class="text-muted-foreground">Managing Director, Visionary Corp</p>
+        </div>
+
+        <!-- Review Card 5 -->
+        <div class="p-6 bg-card rounded-lg border border-border hover:shadow-glow transition-all animate-fade-in" style="animation-delay:0.8s">
+          <p class="text-accent mb-4">
+            "Exceptional service and commitment to empowerment. They truly understand what businesses need to succeed."
+          </p>
+          <h3 class="text-lg font-semibold text-primary">– Kabelo D.</h3>
+          <p class="text-muted-foreground">CEO, Innovate SA</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<!-- Return Home Button -->
+<div class="container mx-auto px-4  my-12 text-center">
+  <a href="index.html">
+    <button class="px-8 py-3 bg-black text-primary border border-primary rounded-lg hover:bg-primary hover:text-black transition-all flex items-center mx-auto">
+      Return Home
+    </button>
+  </a>
+ <br>
+
+  <!-- Footer -->
+<footer class="bg-black border-t border-border py-6 text-center text-muted-foreground text-sm sm:text-base">
+  <p>© 2025 TerraCrest Group. All rights reserved.</p>
+</footer>
+</div>
+</body>
+</html>

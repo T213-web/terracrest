@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About - TerraCrest Group</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+:root {
+  --primary: #00ffff;
+  --accent: #00ced1;
+  --card: rgba(17, 17, 17, 0.5);
+  --border: #333;
+  --muted-foreground: #00ced1;
+}
+
+body {
+  background-color: #000;
+  color: var(--primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.bg-card { background-color: var(--card); }
+.border-border { border-color: var(--border); }
+.text-primary { color: var(--primary); }
+.text-accent { color: var(--accent); }
+.text-muted-foreground { color: var(--muted-foreground); }
+
+.hover\:shadow-glow:hover { box-shadow: 0 0 20px var(--primary); }
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s infinite;
+}
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary); }
+  50% { text-shadow: 0 0 25px var(--primary), 0 0 35px var(--primary); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.border-glow {
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 10px rgba(0,255,255,0.3);
+}
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 w-full">
+  <img src="About.jpeg" alt="About Hero" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="relative z-10 text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 text-primary animate-glow-pulse">
+      About TerraCrest Group
+    </h1>
+    <p class="text-base text-white sm:text-lg md:text-xl text-accent max-w-3xl mx-auto">
+      Leading the charge in Black Economic Empowerment and sustainable business transformation
+    </p>
+  </div>
+</section>
+
+<!-- Managing Director Section -->
+<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden px-4">
+  <img src="Background.jpg" alt="MD Background" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+
+  <div class="relative fade-in max-w-[1200px] mx-auto w-full">
+    <div class="bg-card border border-border rounded-lg p-6 md:p-12 hover:shadow-glow transition-all border-glow">
+      <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+        <div class="w-36 h-36 md:w-48 md:h-48 flex-shrink-0">
+          <img src="TK.png" alt="Trish Kalika" loading="lazy" class="w-full h-full object-cover rounded-full border-2 border-primary shadow-lg" />
+        </div>
+        <div class="flex-1">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-3 md:mb-4 text-primary">Trish Kalika</h2>
+          <p class="text-sm sm:text-base md:text-muted-foreground leading-relaxed text-white">
+            At TerraCrest, we help communities grow with purpose, impact, and measurable results. Founded by
+            <span class="text-accent">Trish Taahira Kalika</span>, a seasoned B-BBEE Compliance and Transformation expert,
+            we guide organisations through the full B-BBEE journey — from gap analysis and scorecard strategy
+            to skills development and verification readiness — while embedding transformation into culture and leadership.
+            <br><br>
+            We combine professional expertise with a values-driven approach, ensuring every solution not only
+            improves your B-BBEE compliance but also strengthens your people, culture, and long-term growth.
+            With TerraCrest, you get strategies that are tailored, actionable, and results-focused — building
+            an inclusive South Africa where businesses and communities thrive together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Values Section -->
+<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden px-4">
+  <img src="About.jpeg" alt="Values Background" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <div class="relative fade-in w-full max-w-[1400px] mx-auto h-full flex flex-col items-center justify-center">
+    <h2 class="text-5xl mb-12 text-primary font-bold text-center animate-glow-pulse">Our Values</h2>
+    <div class="flex flex-col md:flex-row flex-wrap items-center justify-center h-full gap-6">
+      <div class="bg-card border border-border rounded-lg p-6 hover:shadow-glow transition-all flex-1 min-w-[220px] max-w-[300px] text-center">
+        <div class="text-3xl mb-3">🏢</div>
+        <h3 class="text-xl font-semibold mb-2 text-primary">Integrity</h3>
+        <p class="text-muted-foreground text-white">Operating with transparency and ethical standards in all engagements.</p>
+      </div>
+      <div class="bg-card border border-border rounded-lg p-6 hover:shadow-glow transition-all flex-1 min-w-[220px] max-w-[300px] text-center">
+        <div class="text-3xl mb-3">🏆</div>
+        <h3 class="text-xl font-semibold mb-2 text-primary">Excellence</h3>
+        <p class="text-muted-foreground text-white">Delivering superior quality and results that exceed expectations.</p>
+      </div>
+      <div class="bg-card border border-border rounded-lg p-6 hover:shadow-glow transition-all flex-1 min-w-[220px] max-w-[300px] text-center">
+        <div class="text-3xl mb-3">❤️</div>
+        <h3 class="text-xl font-semibold mb-2 text-primary">Empowerment</h3>
+        <p class="text-muted-foreground text-white">Creating opportunities and fostering growth for disadvantaged communities.</p>
+      </div>
+      <div class="bg-card border border-border rounded-lg p-6 hover:shadow-glow transition-all flex-1 min-w-[220px] max-w-[300px] text-center">
+        <div class="text-3xl mb-3">💡</div>
+        <h3 class="text-xl font-semibold mb-2 text-primary">Innovation</h3>
+        <p class="text-muted-foreground text-white">Pioneering creative solutions to complex transformation challenges.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission Section -->
+<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden px-4">
+  <img src="Background.jpg" alt="Mission Background" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+
+  <div class="relative fade-in max-w-[1200px] mx-auto w-full text-center">
+    <div class="bg-card border border-border rounded-lg p-8 md:p-16 border-glow">
+      <h2 class="text-5xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-primary animate-glow-pulse">Our Mission</h2>
+      <p class="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed text-white">
+        To drive meaningful economic transformation through strategic B.E.E. initiatives, empowering
+        businesses and communities to achieve sustainable growth and prosperity. We are committed to
+        creating lasting value and fostering an inclusive economy where all South Africans can thrive.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Return Home Section (Button Only, Stay Same) -->
+<section class="relative w-full py-16 md:py-24 overflow-hidden px-4">
+  <img src="Background.jpg" alt="Return Home Background" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black bg-opacity-5"></div>
+  <div class="relative z-10 text-center fade-in">
+    <a href="index.html">
+      <button class="px-8 md:px-10 py-3 md:py-4 bg-black text-primary border border-primary rounded-lg hover:bg-primary hover:text-black hover:shadow-glow transition-all">
+        Return Home
+      </button>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black border-t border-border py-6 text-center text-muted-foreground text-sm sm:text-base">
+  <p>© 2025 TerraCrest Group. All rights reserved.</p>
+</footer>
+
+<!-- Scroll Animation Script -->
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+  });
+});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

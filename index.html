@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TerraCrest Group - Home</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root {
+  --primary: #00ffff;
+  --accent: #33ffff;
+}
+
+.bg-primary { background-color: var(--primary); }
+.hover\:bg-accent:hover { background-color: var(--accent); }
+.text-primary { color: var(--primary); }
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s infinite;
+}
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary); }
+  50% { text-shadow: 0 0 20px var(--primary), 0 0 30px var(--primary); }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease forwards;
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive tweaks for better readability on mobile */
+.hero-panel, .impact-panel, .cta-panel { max-width: 90%; }
+.hero-panel { padding-top: 4rem; padding-bottom: 4rem; }
+@media (min-width: 768px) {
+  .hero-panel, .impact-panel, .cta-panel { max-width: 65%; }
+  .hero-panel { padding-top: 6rem; padding-bottom: 6rem; }
+}
+@media (max-width: 480px) {
+  h2 { font-size: 1.6rem; }
+  .hero-panel p, .impact-panel p, .cta-panel p { font-size: 0.95rem; }
+  .hero-panel, .impact-panel, .cta-panel { padding: 1.25rem; }
+}
+</style>
+</head>
+<body class="bg-black text-primary font-sans">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-black text-primary z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12">
+          <img src="Tc.logo.png" srcset="Tc.logo@2x.png 2x" alt="TerraCrest Group Logo" loading="lazy" width="48" height="48" class="w-full h-full object-contain">
+        </div>
+        <h1 class="text-2xl md:text-3xl font-bold animate-glow-pulse drop-shadow-[0_0_10px_rgba(0,255,255,0.8)]">
+          TerraCrest Group
+        </h1>
+      </div>
+      <button id="burger-btn" class="flex flex-col justify-between w-8 h-6 md:w-10 md:h-8 focus:outline-none z-50" aria-label="Open menu" aria-controls="burger-menu" aria-expanded="false">
+        <span class="block h-1 bg-primary rounded"></span>
+        <span class="block h-1 bg-primary rounded"></span>
+        <span class="block h-1 bg-primary rounded"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Popup Menu -->
+  <div id="burger-menu" class="fixed top-0 right-0 w-64 h-full bg-black/95 backdrop-blur-md transform translate-x-full transition-transform duration-300 z-40 flex flex-col items-center justify-center space-y-6" role="dialog" aria-modal="true" aria-hidden="true">
+    <a href="index.html" class="px-6 py-3 w-48 flex items-center justify-center bg-black text-primary border border-primary rounded-lg hover:bg-primary hover:text-black transition-all">Home</a>
+    <a href="about.html" class="px-6 py-3 w-48 flex items-center justify-center bg-black text-primary border border-primary rounded-lg hover:bg-primary hover:text-black transition-all">About</a>
+    <a href="contact.html" class="px-6 py-3 w-48 flex items-center justify-center bg-black text-primary border border-primary rounded-lg hover:bg-primary hover:text-black transition-all">Contact</a>
+    <a href="reviews.html" class="px-6 py-3 w-48 flex items-center justify-center bg-black text-primary border border-primary rounded-lg hover:bg-primary hover:text-black transition-all">Reviews</a>
+  </div>
+
+    <script>
+  const burgerBtn = document.getElementById('burger-btn');
+  const burgerMenu = document.getElementById('burger-menu');
+
+  function closeMenu() {
+    burgerMenu.classList.add('translate-x-full');
+    burgerBtn.setAttribute('aria-expanded', 'false');
+    burgerMenu.setAttribute('aria-hidden', 'true');
+  }
+  function openMenu() {
+    burgerMenu.classList.remove('translate-x-full');
+    burgerBtn.setAttribute('aria-expanded', 'true');
+    burgerMenu.setAttribute('aria-hidden', 'false');
+    // focus first link for accessibility
+    const firstLink = burgerMenu.querySelector('a');
+    if (firstLink) firstLink.focus();
+  }
+
+  burgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (burgerMenu.classList.contains('translate-x-full')) openMenu(); else closeMenu();
+  });
+
+  burgerMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!burgerMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[600px] md:min-h-[800px] flex flex-col justify-center items-center text-center overflow-hidden">
+    <!-- Full-screen hero background (office with younger woman in professional setting) -->
+    <div class="absolute inset-0">
+      <img id="hero-bg" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop" alt="Hero Background" loading="lazy" class="w-full h-full object-cover">
+    </div>
+    <!-- Hero Text: centered panel for readability -->
+    <div class="relative z-10 flex flex-col items-center px-4 pt-24">
+      <div class="max-w-3xl hero-panel text-center bg-black/40 backdrop-blur-sm p-8 rounded-lg">
+        <h2 class="text-4xl md:text-6xl font-bold drop-shadow-[0_0_15px_rgba(0,255,255,0.2)]">
+          Empowering Economic Transformation
+        </h2>
+        <p class="text-lg md:text-xl text-white mt-4 leading-relaxed">
+          TerraCrest Group leads the way in Black Economic Empowerment, driving innovation and sustainable growth across South Africa.
+        </p>
+        <a href="contact.html" class="mt-8 inline-block px-8 py-3 bg-black text-primary border border-primary rounded-lg hover:bg-primary hover:text-black transition-all">
+          Book Free Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+  // Try to replace Unsplash fallbacks with local images if they exist
+  (async function(){
+    const checkAndSwap = async (imgId, localPaths)=>{
+      const img = document.getElementById(imgId);
+      if(!img) return;
+      for (const p of localPaths) {
+        try {
+          const res = await fetch(p, { method: 'HEAD' });
+          if (res.ok) { img.src = p; return; }
+        } catch(e) {
+          // ignore
+        }
+      }
+    };
+
+    checkAndSwap('hero-bg',['images/hero-1600.jpg','images/hero-800.jpg']);
+    checkAndSwap('impact-bg',['images/impact-1600.jpg','images/impact-800.jpg']);
+    checkAndSwap('cta-bg',['images/cta-1600.jpg','images/cta-800.jpg']);
+  })();
+  </script>
+  <section class="relative min-h-[600px] md:min-h-[800px] flex flex-col justify-center items-center text-center overflow-hidden">
+    <!-- Full-screen impact background (professional corporate consulting image) -->
+    <div class="absolute inset-0">
+      <img id="impact-bg" src="https://images.unsplash.com/photo-1557821552-17105176677c?w=1600&h=900&fit=crop" alt="Impact Background" loading="lazy" class="w-full h-full object-cover">
+    </div>
+    <div class="relative z-10 container mx-auto px-4 text-center">
+      <div class="max-w-4xl impact-panel mx-auto bg-black/40 backdrop-blur-sm p-8 rounded-lg">
+        <h2 class="text-4xl md:text-6xl font-bold mb-2 drop-shadow-[0_0_15px_rgba(0,255,255,0.2)]">Our Impact</h2>
+        <p class="text-lg text-white mb-8">We provide strategic consulting and transformation services to ensure businesses achieve their full compliance potential.</p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 border border-gray-700 rounded-lg hover:shadow-lg animate-fade-in text-center bg-black/50">
+          <h3 class="text-xl font-semibold mb-2">Strategy Consulting</h3>
+          <p class="text-white">Developing and implementing effective business strategies</p>
+        </div>
+
+        <div class="p-6 border border-gray-700 rounded-lg hover:shadow-lg animate-fade-in text-center bg-black/50" style="animation-delay:0.2s">
+          <h3 class="text-xl font-semibold mb-2">Transformation Management</h3>
+          <p class="text-white">Guiding organizations through change to achieve their goals</p>
+        </div>
+
+        <div class="p-6 border border-gray-700 rounded-lg hover:shadow-lg animate-fade-in text-center bg-black/50" style="animation-delay:0.4s">
+          <h3 class="text-xl font-semibold mb-2">Performance Improvement</h3>
+          <p class="text-white">Optimizing business processes for better results</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section (Full Screen Now) -->
+  <section class="relative min-h-[600px] md:min-h-[800px] lg:min-h-screen flex flex-col justify-center items-center text-center overflow-hidden">
+    <!-- Full-screen CTA background (professional city/finance skyline image) -->
+    <div class="absolute inset-0">
+      <img id="cta-bg" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&h=900&fit=crop" alt="CTA Background" loading="lazy" class="w-full h-full object-cover">
+    </div>
+    <div class="relative z-10 container mx-auto px-4 text-center py-16">
+      <div class="max-w-3xl cta-panel mx-auto bg-black/40 backdrop-blur-sm p-8 rounded-lg">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-[0_0_15px_rgba(0,255,255,0.4)]">Ready to Transform Your Business?</h2>
+        <p class="text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]">
+          Partner with TerraCrest Group and unlock your organization's full potential
+        </p>
+        <a href="contact.html" class="px-8 py-3 bg-black text-primary border border-primary rounded-lg hover:bg-primary hover:text-black transition-all inline-flex">
+          Start Your Journey
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-primary py-6 text-center text-primary text-sm sm:text-base">
+    <p>© 2025 TerraCrest Group. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

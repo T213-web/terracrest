@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - TerraCrest Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary: #00ffff; /* Aqua */
+      --accent: #33ffff; /* Slightly lighter aqua for hover */
+    }
+
+    .bg-primary { background-color: var(--primary); }
+    .hover\:bg-accent:hover { background-color: var(--accent); }
+    .text-primary { color: var(--primary); }
+    .animate-glow-pulse {
+      animation: glow-pulse 2s infinite;
+    }
+    @keyframes glow-pulse {
+      0%, 100% { text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary); }
+      50% { text-shadow: 0 0 20px var(--primary), 0 0 30px var(--primary); }
+    }
+    .animate-fade-in { animation: fade-in 1s ease forwards; }
+    @keyframes fade-in { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+    .transition-all { transition: all 0.3s ease; }
+  </style>
+</head>
+<body class="bg-black text-primary font-sans">
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('Contact.jpeg');"></div>
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <div class="relative z-10 container mx-auto px-4 text-center animate-fade-in">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-glow-pulse">Get In Touch</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white">
+        Let's discuss how we can help transform your business
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 py-16">
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start max-w-6xl mx-auto">
+
+      <!-- Contact Form -->
+      <div class="animate-fade-in" style="animation-delay:0.2s;">
+        <form id="contact-form" role="form" action="https://script.google.com/macros/s/AKfycby2PMsAtwC2RO5Z3_Ilm8Jeo5gC5fd4iOAt5SpITYhyxPyyWFaCDzYm7CyMCd-vnOXN/exec" method="post" target="hidden_iframe" class="space-y-6 border border-gray-700 rounded-lg p-8 hover:shadow-lg transition-all w-full max-w-md mx-auto" aria-labelledby="contact-heading">
+          <div>
+            <label class="block font-medium mb-2" for="name">Name</label>
+            <input type="text" id="name" name="name" aria-required="true" class="w-full p-2 border border-gray-700 rounded bg-black text-primary focus:border-primary" required>
+          </div>
+
+          <div>
+            <label class="block font-medium mb-2" for="email">Email</label>
+            <input type="email" id="email" name="email" aria-required="true" class="w-full p-2 border border-gray-700 rounded bg-black text-primary focus:border-primary" required>
+          </div>
+
+          <div>
+            <label class="block font-medium mb-2" for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" aria-required="true" class="w-full p-2 border border-gray-700 rounded bg-black text-primary focus:border-primary" required>
+          </div>
+
+          <div>
+            <label class="block font-medium mb-2" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" aria-required="true" class="w-full p-2 border border-gray-700 rounded bg-black text-primary focus:border-primary" required></textarea>
+          </div>
+          <button type="submit" id="contact-submit" class="w-full py-3 bg-primary text-black rounded-lg hover:bg-accent hover:text-white transition-all">Send Message</button>
+          <div id="form-status" role="status" aria-live="polite" class="text-sm mt-2 text-white"></div>
+        </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="space-y-8 animate-fade-in" style="animation-delay:0.3s;">
+        <div>
+          <h2 class="text-5xl font-bold mb-6 animate-glow-pulse max-w-2xl mx-auto text-center">Contact Information</h2>
+          <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white text-center">
+            Reach out to us through any of these channels. We're here to help
+            you achieve your transformation goals.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex items-start gap-4 p-4 border border-gray-700 rounded-lg hover:shadow-lg transition-all">
+            <span class="text-primary mt-1 flex-shrink-0">&#9993;</span>
+            <div>
+              <h3 class="font-semibold mb-1">Email</h3>
+              <a href="mailto:info@terracrestgroup.co.za" class="hover:text-accent transition-all">info@terracrestgroup.co.za</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 border border-gray-700 rounded-lg hover:shadow-lg transition-all">
+            <span class="text-primary mt-1 flex-shrink-0">&#9742;</span>
+            <div>
+              <h3 class="font-semibold mb-1">Phone</h3>
+              <a href="tel:+27123456789" class="hover:text-accent transition-all">+27 12 345 6789</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 border border-gray-700 rounded-lg hover:shadow-lg transition-all">
+            <span class="text-primary mt-1 flex-shrink-0">&#128205;</span>
+            <div>
+              <h3 class="font-semibold mb-1">Address</h3>
+              <p>
+                123 Business District<br>
+                Sandton, Johannesburg<br>
+                South Africa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="index.html" class="inline-flex px-8 py-3 bg-black text-primary border border-primary rounded-lg hover:bg-primary hover:text-black transition-all">
+        Return Home
+      </a>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  const submitBtn = document.getElementById('contact-submit');
+  const endpoint = 'https://script.google.com/macros/s/AKfycbxj8fyGoKSuG5YkDxRe90wY6dT4-XV6oaij9aHk8ktC4hv38UrtbF9nsPnHvAI169ly/exec';
+  let waiting = false;
+
+  if (!form || !status || !submitBtn) return;
+
+  form.action = endpoint;
+  form.method = 'POST';
+  form.target = 'hidden_iframe';
+
+  const iframe = document.querySelector('iframe[name="hidden_iframe"]');
+  if (iframe) {
+    iframe.addEventListener('load', function() {
+      if (!waiting) return;
+      waiting = false;
+      status.textContent = '✅ Message submitted successfully. Thank you!';
+      submitBtn.disabled = false;
+      form.reset();
+    });
+  }
+
+  form.addEventListener('submit', function(e){
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      e.preventDefault();
+      status.textContent = 'Please fill in the required fields.';
+      return;
+    }
+
+    waiting = true;
+    submitBtn.disabled = true;
+    status.textContent = 'Sending...';
+
+    setTimeout(function() {
+      if (waiting) {
+        status.textContent = '✅ Message submitted. If you do not see a confirmation, please use the email fallback.';
+        submitBtn.disabled = false;
+        waiting = false;
+      }
+    }, 8000);
+  });
+})();
+</script>
+</body>
+</html>
